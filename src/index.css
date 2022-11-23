@@ -1,13 +1,51 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap");
+
+:root {
+  --font-raleway: "Open Sans", sans-serif;
+  --font-open-sans: "Raleway", sans-serif;
+
+  /* ### Primary */
+
+  /* (intro and email sign up background) */
+  --dark-blue-1: hsl(217, 28%, 15%);
+  /* (main background) */
+  --dark-blue-2: hsl(218, 28%, 13%);
+  /* (footer background) */
+  --dark-blue-3: hsl(216, 53%, 9%);
+  /* (testimonials background) */
+  --dark-blue-4: hsl(219, 30%, 18%);
+
+  /* ### Accent */
+
+  /* (inside call-to-action gradient) */
+  --cyan: hsl(176, 68%, 64%);
+  /* (inside call-to-action gradient) */
+  --blue: hsl(198, 60%, 50%);
+  /* (error) */
+  --light-red: hsl(0, 100%, 63%);
+
+  /* ### Neutral */
+
+  --white: hsl(0, 0%, 100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+.app-container {
+  display: grid;
+  grid-template-rows: min-content 100vh repeat(4, min-content) 40vh;
+  grid-template-columns: minmax(4rem 1fr) repeat(auto-fit, minmax(14rem 1fr)) minmax(
+      4rem 1fr
+    );
 }
