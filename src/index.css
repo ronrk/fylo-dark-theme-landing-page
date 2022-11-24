@@ -3,6 +3,7 @@
 :root {
   --font-raleway: "Open Sans", sans-serif;
   --font-open-sans: "Raleway", sans-serif;
+  --main-padding: 4rem 10rem;
 
   /* ### Primary */
 
@@ -44,8 +45,82 @@ html {
 
 .app-container {
   display: grid;
-  grid-template-rows: min-content 100vh repeat(4, min-content) 40vh;
-  grid-template-columns: minmax(4rem 1fr) repeat(auto-fit, minmax(14rem 1fr)) minmax(
-      4rem 1fr
-    );
+  grid-template-rows:
+    min-content minmax(min-content, 100vh) repeat(4, min-content)
+    minmax(60vh, min-content);
+  grid-template-columns:
+    [full-start] minmax(4rem, 1fr) [center-start] repeat(
+      5,
+      [col-start] minmax(min-content, 30rem) [col-end]
+    )
+    [center-end]
+    minmax(4rem, 1fr) [full-end];
+
+  /* grid-template-columns:
+    [full-start] minmax(6rem, 1fr) [center-start] repeat(
+      5,
+      [col-start] minmax(min-content, 30rem) [col-end]
+    )
+    [center-end] minmax(6rem, 1fr) [full-end]; */
+
+  background-color: var(--dark-blue-2);
+  overflow: hidden;
+}
+
+.heading-2 {
+  font-size: 4rem;
+  font-family: var(--font-raleway);
+  color: var(--white);
+  /* font-weight: 400; */
+
+  text-align: center;
+}
+
+.heading-3 {
+  font-size: 2.5rem;
+  font-family: var(--font-open-sans);
+  color: var(--white);
+  /* font-weight: 400; */
+  /* width: 35ch; */
+  text-align: center;
+}
+
+.btn {
+  background: none;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+.btn-hero {
+  color: var(--white);
+  background-color: var(--blue);
+  padding: 1.6rem 8rem;
+  border-radius: 1000px;
+  font-size: 1.5rem;
+  font-family: var(--font-raleway);
+  letter-spacing: 1.3px;
+  transition: all 0.2s;
+}
+
+.btn-hero:hover {
+  filter: brightness(140%);
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 59%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    --main-padding: 4rem 7rem;
+  }
+  html {
+    font-size: 54%;
+  }
+
+  .heading-2 {
+    font-size: 3.5rem;
+  }
 }
